@@ -16,3 +16,4 @@ sudo apt-get install -y kubectl
 
 # Add kubectl alias
 echo "alias k='kubectl'" >> ~/.bashrc
+source ~/.bashrc
