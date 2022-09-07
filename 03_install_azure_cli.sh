@@ -4,11 +4,11 @@
 while (( "$#" )); do
   case "$1" in
     --resource-group)
-      $resourceGroupName="$2"
+      resourceGroupName="$2"
       shift
       ;;
     --aks-name)
-      $aksName="$2"
+      aksName="$2"
       shift
       ;;
     *)
@@ -28,7 +28,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az login --use-device-code
 
 # Get AKS credentials
-az aks get-credentials \
+sudo az aks get-credentials \
   --resource-group $resourceGroupName \
   --name $aksName \
   --overwrite-existing
