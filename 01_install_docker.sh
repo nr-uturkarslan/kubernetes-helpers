@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Get commandline arguments
+while (( "$#" )); do
+  case "$1" in
+    --password)
+      dockerhubPassword="$2"
+      shift
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
+
 # Update
 sudo apt-get update
 echo Y | sudo apt-get upgrade
@@ -24,3 +37,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 
 sudo apt-get update
 echo Y | sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# Login
+echo $dockerhubPassword | sudo docker login --username $DOCKERHUB_NAME --password-stdin
