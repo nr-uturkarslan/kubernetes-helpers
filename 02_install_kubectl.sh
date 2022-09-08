@@ -15,5 +15,5 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 
 # Add kubectl alias
-echo "alias k='sudo kubectl'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias k='sudo kubectl'" >> /etc/environment
+source /etc/environment

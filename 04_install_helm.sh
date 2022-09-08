@@ -10,3 +10,7 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 # Install
 chmod 700 get_helm.sh
 ./get_helm.sh
+
+# Add helm alias
+echo "alias helm='sudo helm'" >> /etc/environment
+source /etc/environment
