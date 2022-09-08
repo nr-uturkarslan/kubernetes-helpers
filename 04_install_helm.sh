@@ -12,5 +12,5 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 
 # Add helm alias
-echo "alias helm='sudo helm'" >> /etc/environment
+echo "alias helm='sudo helm'" | sudo tee -a /etc/environment
 source /etc/environment
